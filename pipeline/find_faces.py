@@ -48,7 +48,6 @@ if __name__ == "__main__":
         os.makedirs(face_directory)
 
     for i, face in enumerate(face_data):
-        import ipdb; ipdb.set_trace()
         output_metadata['faces'].append(face.tolist())
         crop_img = crop_face(img_metadata, cv_img, face)
         cv2.imwrite(os.path.join(face_directory, "face%d.jpg" % i), crop_img)
